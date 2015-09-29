@@ -65,7 +65,7 @@ Provides abstractions to get the developer's purposes fulfilled.
 #--------------------------------------------------------------------
 
 %package devel
-Summary:        Provides abstractions to get the developer's purposes fulfilled: Build Environment
+Summary:        Provides abstractions to get the developer's purposes fulfilled
 Group:          Development/KDE and Qt
 Requires:       %{libpurpose} = %{version}
 Requires:	%{libpurposewidgets} = %{version}
