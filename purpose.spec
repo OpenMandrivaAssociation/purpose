@@ -1,6 +1,6 @@
 Name:		purpose
 Version:	1.0
-Release:        1
+Release:        2
 Summary:        Provides abstractions to get the developer's purposes fulfilled
 License:        LGPL-2.1+
 Group:          System/Base
@@ -85,10 +85,10 @@ Development files.
 %prep
 %setup -q
 %apply_patches
+%cmake_kde5
 
 %build
-%cmake_kde5
-%ninja
+%ninja -C build
 
 %install
 %ninja_install -C build
