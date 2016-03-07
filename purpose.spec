@@ -1,6 +1,6 @@
 Name:		purpose
 Version:	1.0
-Release:        2
+Release:        3
 Summary:        Provides abstractions to get the developer's purposes fulfilled
 License:        LGPL-2.1+
 Group:          System/Base
