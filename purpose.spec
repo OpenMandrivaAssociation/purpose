@@ -29,7 +29,7 @@ Framework for providing abstractions to get the developer's purposes fulfilled.
 %{_kde5_qmldir}/org/kde/%{name}
 %{_kde5_iconsdir}/*/*/*/*
 %{_libdir}/libexec/kf5/purposeprocess
-%{_datadir}/accounts/services/kde/*.services
+%{_datadir}/accounts/services/kde/*.service
 %{_datadir}/kpackage/Purpose/Twitter
 
 #--------------------------------------------------------------------
