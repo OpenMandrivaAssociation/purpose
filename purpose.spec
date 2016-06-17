@@ -1,6 +1,6 @@
 Name:		purpose
-Version:	1.0
-Release:        3
+Version:	1.1
+Release:        1
 Summary:        Provides abstractions to get the developer's purposes fulfilled
 License:        LGPL-2.1+
 Group:          System/Base
@@ -92,4 +92,3 @@ Development files.
 
 %install
 %ninja_install -C build
-
