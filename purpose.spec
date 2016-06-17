@@ -22,13 +22,15 @@ BuildRequires:	intltool
 %description
 Framework for providing abstractions to get the developer's purposes fulfilled.
 
-%files
+%files -f %{name}.lang
 %{_kde5_libdir}/libReviewboardHelpers.so
 %{_kde5_datadir}/purpose
 %{_qt5_plugindir}/%{name}
 %{_kde5_qmldir}/org/kde/%{name}
 %{_kde5_iconsdir}/*/*/*/*
-%{_kde5_datadir}/accounts/services/google-youtube.service
+%{_libdir}/libexec/kf5/purposeprocess
+%{_datadir}/accounts/services/kde/*.services
+%{_datadir}/kpackage/Purpose/Twitter
 
 #--------------------------------------------------------------------
 
@@ -92,3 +94,12 @@ Development files.
 
 %install
 %ninja_install -C build
+
+%find_lang libpurpose_quick
+%find_lang libpurpose_widgets
+
+for i in imgur ktp-sendfile pastebin reviewboard saveas youtube; do
+  %find_lang purpose_$i
+done
+
+cat *.lang > %{name}.lang
