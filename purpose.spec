@@ -1,6 +1,6 @@
 Name:		purpose
 Version:	1.1
-Release:        1
+Release:        2
 Summary:        Provides abstractions to get the developer's purposes fulfilled
 License:        LGPL-2.1+
 Group:          System/Base
@@ -34,33 +34,37 @@ Framework for providing abstractions to get the developer's purposes fulfilled.
 
 #--------------------------------------------------------------------
 
-%define purpose_major 5
-%define libpurpose %mklibname kf5purpose %{purpose_major}
+%define major 5
+%define libname %mklibname KF5Purpose %{major}
 
-%package -n %libpurpose
+%package -n %{libname}
 Summary:	Provides abstractions to get the developer's purposes fulfilled
 Group:		System/Libraries
+Obsoletes:	%{mklibname kf5purpose 5} < %{EVRD}
+Provides:	%{mklibname kf5purpose 5} = %{EVRD}
 
-%description -n %libpurpose
+%description -n %{libname}
 Provides abstractions to get the developer's purposes fulfilled.
 
-%files -n %libpurpose
-%_kde5_libdir/libKF5Purpose.so.%{purpose_major}
-%_kde5_libdir/libKF5Purpose.so.%{purpose_major}.*
+%files -n %{libname}
+%_kde5_libdir/libKF5Purpose.so.%{major}
+%_kde5_libdir/libKF5Purpose.so.%{major}.*
 
 #--------------------------------------------------------------------
 
 %define purposewidgets_major 5
-%define libpurposewidgets %mklibname kf5purposewidgets %{purposewidgets_major}
+%define libpurposewidgets %mklibname KF5PurposeWidgets %{purposewidgets_major}
 
-%package -n %libpurposewidgets
+%package -n %{libpurposewidgets}
 Summary:        Provides abstractions to get the developer's purposes fulfilled
 Group:          System/Libraries
+Obsoletes:	%{mklibname kf5purposewidgets 5} < %{EVRD}
+Provides:	%{mklibname kf5purposewidgets 5} = %{EVRD}
 
-%description -n %libpurposewidgets
+%description -n %{libpurposewidgets}
 Provides abstractions to get the developer's purposes fulfilled.
 
-%files -n %libpurposewidgets
+%files -n %{libpurposewidgets}
 %_kde5_libdir/libKF5PurposeWidgets.so.%{purposewidgets_major}
 %_kde5_libdir/libKF5PurposeWidgets.so.%{purposewidgets_major}.*
 
@@ -69,8 +73,8 @@ Provides abstractions to get the developer's purposes fulfilled.
 %package devel
 Summary:        Provides abstractions to get the developer's purposes fulfilled
 Group:          Development/KDE and Qt
-Requires:       %{libpurpose} = %{version}
-Requires:	%{libpurposewidgets} = %{version}
+Requires:       %{libname} = %{EVRD}
+Requires:	%{libpurposewidgets} = %{EVRD}
 
 %description devel
 Framework for providing abstractions to get the developer's purposes fulfilled.
