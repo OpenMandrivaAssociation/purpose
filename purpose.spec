@@ -18,6 +18,7 @@ BuildRequires:	pkgconfig(Qt5Gui) >= 5.2
 BuildRequires:	pkgconfig(Qt5Test) >= 5.2
 BuildRequires:	cmake(ECM)
 BuildRequires:	intltool
+BuildRequires:	kdeconnect
 
 %description
 Framework for providing abstractions to get the developer's purposes fulfilled.
@@ -83,6 +84,7 @@ Development files.
 %files devel
 %{_kde5_libdir}/libKF5Purpose.so
 %{_kde5_libdir}/libKF5PurposeWidgets.so
+%{_kde5_libdir}/libPhabricatorHelpers.so
 %{_kde5_libdir}/cmake/KDEExperimentalPurpose/
 %{_kde5_includedir}/*
 
@@ -102,7 +104,7 @@ Development files.
 %find_lang libpurpose_quick
 %find_lang libpurpose_widgets
 
-for i in imgur ktp-sendfile pastebin reviewboard saveas youtube; do
+for i in imgur email ktp-sendfile nextcloud pastebin reviewboard saveas youtube; do
   %find_lang purpose_$i
 done
 
