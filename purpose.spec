@@ -1,11 +1,12 @@
 Name:		purpose
-Version:	1.2.1
+Version:	5.43.0
 Release:        1
 Summary:        Provides abstractions to get the developer's purposes fulfilled
 License:        LGPL-2.1+
 Group:          System/Base
 Url:            http://www.kde.org
-Source:         http://download.kde.org/stable/purpose/%{name}-%{version}.tar.xz
+%define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
+Source0:        http://download.kde.org/%{stable}/frameworks/%{version}/%{name}-%{version}.tar.xz
 BuildRequires:	cmake(KAccounts)
 BuildRequires:	cmake(KF5CoreAddons)
 BuildRequires:	cmake(KF5Config)
@@ -24,14 +25,24 @@ BuildRequires:	kdeconnect
 Framework for providing abstractions to get the developer's purposes fulfilled.
 
 %files -f %{name}.lang
-%{_kde5_libdir}/libReviewboardHelpers.so
 %{_kde5_datadir}/purpose
-%{_qt5_plugindir}/%{name}
 %{_kde5_qmldir}/org/kde/%{name}
 %{_kde5_iconsdir}/*/*/*/*
 %{_libdir}/libexec/kf5/purposeprocess
 %{_datadir}/accounts/services/kde/*.service
 %{_datadir}/kpackage/Purpose/Twitter
+%dir %{_libdir}/qt5/plugins/kf5/purpose
+%{_libdir}/qt5/plugins/kf5/purpose/emailplugin.so
+%{_libdir}/qt5/plugins/kf5/purpose/imgurplugin.so
+%{_libdir}/qt5/plugins/kf5/purpose/kdeconnectplugin.so
+%{_libdir}/qt5/plugins/kf5/purpose/ktpsendfileplugin.so
+%{_libdir}/qt5/plugins/kf5/purpose/nextcloudplugin.so
+%{_libdir}/qt5/plugins/kf5/purpose/pastebinplugin.so
+%{_libdir}/qt5/plugins/kf5/purpose/phabricatorplugin.so
+%{_libdir}/qt5/plugins/kf5/purpose/reviewboardplugin.so
+%{_libdir}/qt5/plugins/kf5/purpose/saveasplugin.so
+%{_libdir}/qt5/plugins/kf5/purpose/youtubeplugin.so
+
 
 #--------------------------------------------------------------------
 
@@ -50,6 +61,10 @@ Provides abstractions to get the developer's purposes fulfilled.
 %files -n %{libname}
 %_kde5_libdir/libKF5Purpose.so.%{major}
 %_kde5_libdir/libKF5Purpose.so.%{major}.*
+
+%libpackage PhabricatorHelpers %{major}
+
+%libpackage ReviewboardHelpers %{major}
 
 #--------------------------------------------------------------------
 
@@ -84,8 +99,8 @@ Development files.
 %files devel
 %{_kde5_libdir}/libKF5Purpose.so
 %{_kde5_libdir}/libKF5PurposeWidgets.so
-%{_kde5_libdir}/libPhabricatorHelpers.so
 %{_kde5_libdir}/cmake/KDEExperimentalPurpose/
+%{_libdir}/cmake/KF5Purpose
 %{_kde5_includedir}/*
 
 #--------------------------------------------------------------------
