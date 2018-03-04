@@ -1,5 +1,5 @@
 Name:		purpose
-Version:	5.43.0
+Version:	5.44.0
 Release:        1
 Summary:        Provides abstractions to get the developer's purposes fulfilled
 License:        LGPL-2.1+
@@ -102,6 +102,7 @@ Development files.
 %{_kde5_libdir}/cmake/KDEExperimentalPurpose/
 %{_libdir}/cmake/KF5Purpose
 %{_kde5_includedir}/*
+%{_sysconfdir}/xdg/purpose.categories
 
 #--------------------------------------------------------------------
 
