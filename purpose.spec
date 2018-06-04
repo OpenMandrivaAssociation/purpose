@@ -1,5 +1,8 @@
+# Some purpose plugins require kaccounts
+%bcond_with bootstrap
+
 Name:		purpose
-Version:	5.46.0
+Version:	5.47.0
 Release:        1
 Summary:        Provides abstractions to get the developer's purposes fulfilled
 License:        LGPL-2.1+
@@ -7,7 +10,9 @@ Group:          System/Base
 Url:            http://www.kde.org
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 Source0:        http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
+%if ! %{with bootstrap}
 BuildRequires:	cmake(KAccounts)
+%endif
 BuildRequires:	cmake(KF5CoreAddons)
 BuildRequires:	cmake(KF5Config)
 BuildRequires:	cmake(KF5I18n)
@@ -29,19 +34,26 @@ Framework for providing abstractions to get the developer's purposes fulfilled.
 %{_kde5_qmldir}/org/kde/%{name}
 %{_kde5_iconsdir}/*/*/*/*
 %{_libdir}/libexec/kf5/purposeprocess
+%if ! %{with bootstrap}
 %{_datadir}/accounts/services/kde/*.service
 %{_datadir}/kpackage/Purpose/Twitter
+%endif
 %dir %{_libdir}/qt5/plugins/kf5/purpose
 %{_libdir}/qt5/plugins/kf5/purpose/emailplugin.so
 %{_libdir}/qt5/plugins/kf5/purpose/imgurplugin.so
 %{_libdir}/qt5/plugins/kf5/purpose/kdeconnectplugin.so
 %{_libdir}/qt5/plugins/kf5/purpose/ktpsendfileplugin.so
+%if ! %{with bootstrap}
 %{_libdir}/qt5/plugins/kf5/purpose/nextcloudplugin.so
+%endif
 %{_libdir}/qt5/plugins/kf5/purpose/pastebinplugin.so
 %{_libdir}/qt5/plugins/kf5/purpose/phabricatorplugin.so
 %{_libdir}/qt5/plugins/kf5/purpose/reviewboardplugin.so
 %{_libdir}/qt5/plugins/kf5/purpose/saveasplugin.so
+%{_libdir}/qt5/plugins/kf5/purpose/telegramplugin.so
+%if ! %{with bootstrap}
 %{_libdir}/qt5/plugins/kf5/purpose/youtubeplugin.so
+%endif
 
 
 #--------------------------------------------------------------------
@@ -120,7 +132,7 @@ Development files.
 %find_lang libpurpose_quick
 %find_lang libpurpose_widgets
 
-for i in imgur email ktp-sendfile nextcloud pastebin reviewboard saveas youtube; do
+for i in imgur email ktp-sendfile nextcloud pastebin reviewboard saveas youtube kdeconnect phabricator twitter; do
   %find_lang purpose_$i
 done
 
