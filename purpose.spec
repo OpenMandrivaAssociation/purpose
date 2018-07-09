@@ -2,7 +2,7 @@
 %bcond_with bootstrap
 
 Name:		purpose
-Version:	5.47.0
+Version:	5.48.0
 Release:        1
 Summary:        Provides abstractions to get the developer's purposes fulfilled
 License:        LGPL-2.1+
@@ -38,6 +38,8 @@ Framework for providing abstractions to get the developer's purposes fulfilled.
 %{_datadir}/accounts/services/kde/*.service
 %{_datadir}/kpackage/Purpose/Twitter
 %endif
+%dir %{_libdir}/qt5/plugins/kf5/kfileitemaction
+%{_libdir}/qt5/plugins/kf5/kfileitemaction/sharefileitemaction.so
 %dir %{_libdir}/qt5/plugins/kf5/purpose
 %{_libdir}/qt5/plugins/kf5/purpose/emailplugin.so
 %{_libdir}/qt5/plugins/kf5/purpose/imgurplugin.so
@@ -135,5 +137,6 @@ Development files.
 for i in imgur email ktp-sendfile nextcloud pastebin reviewboard saveas youtube kdeconnect phabricator twitter; do
   %find_lang purpose_$i
 done
+%find_lang purpose-fileitemaction
 
 cat *.lang > %{name}.lang
