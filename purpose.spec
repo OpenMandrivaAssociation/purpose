@@ -12,6 +12,7 @@ Url:            http://www.kde.org
 Source0:        http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 %if ! %{with bootstrap}
 BuildRequires:	cmake(KAccounts)
+BuildRequires:	pkgconfig(libaccounts-glib)
 %endif
 BuildRequires:	cmake(KF5CoreAddons)
 BuildRequires:	cmake(KF5Config)
