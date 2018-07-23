@@ -23,6 +23,10 @@ BuildRequires:	pkgconfig(Qt5Core) >= 5.2
 BuildRequires:	pkgconfig(Qt5Qml) >= 5.2
 BuildRequires:	pkgconfig(Qt5Gui) >= 5.2
 BuildRequires:	pkgconfig(Qt5Test) >= 5.2
+BuildRequires:	pkgconfig(Qt5DBus)
+BuildRequires:	pkgconfig(Qt5Widgets)
+BuildRequires:	pkgconfig(Qt5Network)
+BuildRequires:	pkgconfig(Qt5Concurrent)
 BuildRequires:	cmake(ECM)
 BuildRequires:	intltool
 BuildRequires:	kdeconnect
