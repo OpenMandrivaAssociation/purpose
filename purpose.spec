@@ -75,7 +75,7 @@ Obsoletes:	%{mklibname kf5purpose 5} < %{EVRD}
 Provides:	%{mklibname kf5purpose 5} = %{EVRD}
 %if "%{_lib}" == "lib64"
 Provides:	libKF5PurposeWidgets.so.5()(64bit) = %{EVRD}
-Obsoletes:	libKF5PurposeWidgets.so.5() < %{EVRD}
+Obsoletes:	libKF5PurposeWidgets.so.5()(64bit) < %{EVRD}
 %else
 Provides:	libKF5PurposeWidgets.so.5() = %{EVRD}
 Obsoletes:	libKF5PurposeWidgets.so.5() < %{EVRD}
