@@ -3,7 +3,7 @@
 
 Name:		purpose
 Version:	5.48.0
-Release:        2
+Release:        3
 Summary:        Provides abstractions to get the developer's purposes fulfilled
 License:        LGPL-2.1+
 Group:          System/Base
@@ -73,6 +73,13 @@ Summary:	Provides abstractions to get the developer's purposes fulfilled
 Group:		System/Libraries
 Obsoletes:	%{mklibname kf5purpose 5} < %{EVRD}
 Provides:	%{mklibname kf5purpose 5} = %{EVRD}
+%if "%{_lib}" == "lib64"
+Provides:	libKF5PurposeWidgets.so.5()(64bit) = %{EVRD}
+Obsoletes:	libKF5PurposeWidgets.so.5() < %{EVRD}
+%else
+Provides:	libKF5PurposeWidgets.so.5() = %{EVRD}
+Obsoletes:	libKF5PurposeWidgets.so.5() < %{EVRD}
+%endif
 
 %description -n %{libname}
 Provides abstractions to get the developer's purposes fulfilled.
