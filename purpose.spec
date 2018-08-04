@@ -2,8 +2,8 @@
 %bcond_with bootstrap
 
 Name:		purpose
-Version:	5.48.0
-Release:        3
+Version:	5.49.0
+Release:        1
 Summary:        Provides abstractions to get the developer's purposes fulfilled
 License:        LGPL-2.1+
 Group:          System/Base
@@ -46,6 +46,7 @@ Framework for providing abstractions to get the developer's purposes fulfilled.
 %dir %{_libdir}/qt5/plugins/kf5/kfileitemaction
 %{_libdir}/qt5/plugins/kf5/kfileitemaction/sharefileitemaction.so
 %dir %{_libdir}/qt5/plugins/kf5/purpose
+%{_libdir}/qt5/plugins/kf5/purpose/bluetoothplugin.so
 %{_libdir}/qt5/plugins/kf5/purpose/emailplugin.so
 %{_libdir}/qt5/plugins/kf5/purpose/imgurplugin.so
 %{_libdir}/qt5/plugins/kf5/purpose/kdeconnectplugin.so
