@@ -3,13 +3,13 @@
 
 Name:		purpose
 Version:	5.51.0
-Release:        2
-Summary:        Provides abstractions to get the developer's purposes fulfilled
-License:        LGPL-2.1+
-Group:          System/Base
-Url:            http://www.kde.org
+Release:	3
+Summary:	Provides abstractions to get the developer's purposes fulfilled
+License:	LGPL-2.1+
+Group:		System/Base
+Url:		http://www.kde.org
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
-Source0:        http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
+Source0:	http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 %if ! %{with bootstrap}
 BuildRequires:	cmake(KAccounts)
 BuildRequires:	pkgconfig(libaccounts-glib)
@@ -63,7 +63,6 @@ Framework for providing abstractions to get the developer's purposes fulfilled.
 %{_libdir}/qt5/plugins/kf5/purpose/youtubeplugin.so
 %endif
 
-
 #--------------------------------------------------------------------
 
 %define major 5
@@ -74,20 +73,13 @@ Summary:	Provides abstractions to get the developer's purposes fulfilled
 Group:		System/Libraries
 Obsoletes:	%{mklibname kf5purpose 5} < %{EVRD}
 Provides:	%{mklibname kf5purpose 5} = %{EVRD}
-%if "%{_lib}" == "lib64"
-Provides:	libKF5PurposeWidgets.so.5()(64bit) = %{EVRD}
-Obsoletes:	libKF5PurposeWidgets.so.5()(64bit) < %{EVRD}
-%else
-Provides:	libKF5PurposeWidgets.so.5() = %{EVRD}
-Obsoletes:	libKF5PurposeWidgets.so.5() < %{EVRD}
-%endif
 
 %description -n %{libname}
 Provides abstractions to get the developer's purposes fulfilled.
 
 %files -n %{libname}
-%_kde5_libdir/libKF5Purpose.so.%{major}
-%_kde5_libdir/libKF5Purpose.so.%{major}.*
+%{_kde5_libdir}/libKF5Purpose.so.%{major}
+%{_kde5_libdir}/libKF5Purpose.so.%{major}.*
 
 %libpackage PhabricatorHelpers %{major}
 
@@ -109,15 +101,15 @@ Conflicts:	%{_lib}kf5purposewidgets5 < %{EVRD}
 Provides abstractions to get the developer's purposes fulfilled.
 
 %files -n %{libpurposewidgets}
-%_kde5_libdir/libKF5PurposeWidgets.so.%{purposewidgets_major}
-%_kde5_libdir/libKF5PurposeWidgets.so.%{purposewidgets_major}.*
+%{_kde5_libdir}/libKF5PurposeWidgets.so.%{purposewidgets_major}
+%{_kde5_libdir}/libKF5PurposeWidgets.so.%{purposewidgets_major}.*
 
 #--------------------------------------------------------------------
 
 %package devel
-Summary:        Provides abstractions to get the developer's purposes fulfilled
-Group:          Development/KDE and Qt
-Requires:       %{libname} = %{EVRD}
+Summary:	Provides abstractions to get the developer's purposes fulfilled
+Group:		Development/KDE and Qt
+Requires:	%{libname} = %{EVRD}
 Requires:	%{libpurposewidgets} = %{EVRD}
 
 %description devel
@@ -135,8 +127,7 @@ Development files.
 #--------------------------------------------------------------------
 
 %prep
-%setup -q
-%apply_patches
+%autosetup -p1
 %cmake_kde5
 
 %build
