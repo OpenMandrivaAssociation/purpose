@@ -2,8 +2,8 @@
 %bcond_with bootstrap
 
 Name:		purpose
-Version:	5.56.0
-Release:	2
+Version:	5.57.0
+Release:	1
 Summary:	Provides abstractions to get the developer's purposes fulfilled
 License:	LGPL-2.1+
 Group:		System/Base
@@ -51,6 +51,7 @@ Framework for providing abstractions to get the developer's purposes fulfilled.
 %{_libdir}/qt5/plugins/kf5/purpose/emailplugin.so
 %{_libdir}/qt5/plugins/kf5/purpose/imgurplugin.so
 %{_libdir}/qt5/plugins/kf5/purpose/kdeconnectplugin.so
+%{_libdir}/qt5/plugins/kf5/purpose/kdeconnectsmsplugin.so
 %{_libdir}/qt5/plugins/kf5/purpose/ktpsendfileplugin.so
 %if ! %{with bootstrap}
 %{_libdir}/qt5/plugins/kf5/purpose/nextcloudplugin.so
@@ -140,7 +141,7 @@ Development files.
 %find_lang libpurpose_quick
 %find_lang libpurpose_widgets
 
-for i in imgur email ktp-sendfile nextcloud pastebin reviewboard saveas youtube kdeconnect phabricator twitter; do
+for i in imgur email kdeconnectsms ktp-sendfile nextcloud pastebin reviewboard saveas youtube kdeconnect phabricator twitter; do
   %find_lang purpose_$i
 done
 %find_lang purpose-fileitemaction
