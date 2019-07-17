@@ -20,6 +20,7 @@ BuildRequires:	cmake(KF5I18n)
 BuildRequires:	cmake(KF5KIO)
 BuildRequires:	cmake(KF5Declarative)
 BuildRequires:	cmake(KF5Notifications)
+BuildRequires:	cmake(KF5Kirigami2)
 BuildRequires:	pkgconfig(Qt5Core) >= 5.2
 BuildRequires:	pkgconfig(Qt5Qml) >= 5.2
 BuildRequires:	pkgconfig(Qt5Gui) >= 5.2
