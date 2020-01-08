@@ -32,6 +32,8 @@ BuildRequires:	pkgconfig(Qt5Concurrent)
 BuildRequires:	cmake(ECM)
 BuildRequires:	intltool
 BuildRequires:	kdeconnect
+Requires:	ubuntuonlineaccounts-qml
+Requires:	kdeclarative
 
 %description
 Framework for providing abstractions to get the developer's purposes fulfilled.
@@ -94,8 +96,8 @@ Provides abstractions to get the developer's purposes fulfilled.
 %define libpurposewidgets %mklibname KF5PurposeWidgets %{purposewidgets_major}
 
 %package -n %{libpurposewidgets}
-Summary:        Provides abstractions to get the developer's purposes fulfilled
-Group:          System/Libraries
+Summary:	Provides abstractions to get the developer's purposes fulfilled
+Group:		System/Libraries
 Obsoletes:	%{mklibname kf5purposewidgets 5} < %{EVRD}
 Provides:	%{mklibname kf5purposewidgets 5} = %{EVRD}
 Conflicts:	%{_lib}kf5purposewidgets5 < %{EVRD}
