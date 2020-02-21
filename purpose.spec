@@ -10,6 +10,7 @@ Group:		System/Base
 Url:		http://www.kde.org
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 Source0:	http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
+Patch0:		purpose-5.67.0-qt-5.15.0alpha.patch
 %if ! %{with bootstrap}
 BuildRequires:	cmake(KAccounts)
 BuildRequires:	pkgconfig(libaccounts-glib)
