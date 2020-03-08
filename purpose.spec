@@ -2,15 +2,14 @@
 %bcond_with bootstrap
 
 Name:		purpose
-Version:	5.67.0
-Release:	3
+Version:	5.68.0
+Release:	1
 Summary:	Provides abstractions to get the developer's purposes fulfilled
 License:	LGPL-2.1+
 Group:		System/Base
 Url:		http://www.kde.org
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 Source0:	http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
-Patch0:		purpose-5.67.0-qt-5.15.0alpha.patch
 %if ! %{with bootstrap}
 BuildRequires:	cmake(KAccounts)
 BuildRequires:	pkgconfig(libaccounts-glib)
@@ -46,7 +45,6 @@ Framework for providing abstractions to get the developer's purposes fulfilled.
 %{_libdir}/libexec/kf5/purposeprocess
 %if ! %{with bootstrap}
 %{_datadir}/accounts/services/kde/*.service
-%{_datadir}/kpackage/Purpose/Twitter
 %endif
 %dir %{_libdir}/qt5/plugins/kf5/kfileitemaction
 %{_libdir}/qt5/plugins/kf5/kfileitemaction/sharefileitemaction.so
@@ -145,7 +143,7 @@ Development files.
 %find_lang libpurpose_quick
 %find_lang libpurpose_widgets
 
-for i in bluetooth imgur email kdeconnectsms ktp-sendfile nextcloud pastebin reviewboard saveas youtube kdeconnect phabricator twitter; do
+for i in bluetooth imgur email kdeconnectsms ktp-sendfile nextcloud pastebin reviewboard saveas youtube kdeconnect phabricator; do
   %find_lang purpose_$i
 done
 %find_lang purpose-fileitemaction
