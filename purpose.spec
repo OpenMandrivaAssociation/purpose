@@ -2,8 +2,8 @@
 %bcond_with bootstrap
 
 Name:		purpose
-Version:	5.72.0
-Release:	3
+Version:	5.73.0
+Release:	1
 Summary:	Provides abstractions to get the developer's purposes fulfilled
 License:	LGPL-2.1+
 Group:		System/Base
@@ -126,7 +126,7 @@ Development files.
 %{_kde5_libdir}/cmake/KDEExperimentalPurpose/
 %{_libdir}/cmake/KF5Purpose
 %{_kde5_includedir}/*
-%{_datadir}/qlogging-categories5/purpose.categories
+%{_datadir}/qlogging-categories5/purpose.*categories
 
 #--------------------------------------------------------------------
 
