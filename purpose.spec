@@ -2,7 +2,7 @@
 %bcond_with bootstrap
 
 Name:		purpose
-Version:	5.92.0
+Version:	5.93.0
 Release:	1
 Summary:	Provides abstractions to get the developer's purposes fulfilled
 License:	LGPL-2.1+
