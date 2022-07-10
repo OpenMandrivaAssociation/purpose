@@ -2,8 +2,8 @@
 %bcond_with bootstrap
 
 Name:		purpose
-Version:	5.95.0
-Release:	2
+Version:	5.96.0
+Release:	1
 Summary:	Provides abstractions to get the developer's purposes fulfilled
 License:	LGPL-2.1+
 Group:		System/Base
@@ -145,7 +145,7 @@ Development files.
 %find_lang libpurpose_quick
 %find_lang libpurpose_widgets
 
-for i in barcode bluetooth imgur email kdeconnectsms ktp-sendfile nextcloud pastebin reviewboard saveas youtube kdeconnect phabricator; do
+for i in barcode bluetooth imgur kdeconnectsms ktp-sendfile nextcloud pastebin reviewboard saveas youtube kdeconnect phabricator; do
   %find_lang purpose_$i
 done
 %find_lang purpose-fileitemaction
