@@ -7,7 +7,7 @@ Release:	2
 Summary:	Provides abstractions to get the developer's purposes fulfilled
 License:	LGPL-2.1+
 Group:		System/Base
-Url:		http://www.kde.org
+Url:		https://www.kde.org
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 Source0:	http://download.kde.org/%{stable}/frameworks/%(echo %{version} |cut -d. -f1-2)/%{name}-%{version}.tar.xz
 %if ! %{with bootstrap}
