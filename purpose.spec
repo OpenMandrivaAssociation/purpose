@@ -3,7 +3,7 @@
 
 Name:		purpose
 Version:	5.116.0
-Release:	2
+Release:	3
 Summary:	Provides abstractions to get the developer's purposes fulfilled
 License:	LGPL-2.1+
 Group:		System/Base
@@ -32,6 +32,7 @@ BuildRequires:	pkgconfig(Qt5Concurrent)
 BuildRequires:	cmake(ECM)
 BuildRequires:	intltool
 BuildRequires:	kdeconnect
+BuildRequires:	ubuntuonlineaccounts-qml
 Requires:	ubuntuonlineaccounts-qml
 Requires:	kdeclarative
 
@@ -134,6 +135,7 @@ Development files.
 
 %prep
 %autosetup -p1
+sed -i -e 's,Ubuntu\.OnlineAccounts,SSO.OnlineAccounts,g' CMakeLists.txt src/plugins/youtube/youtubeplugin_config.qml src/plugins/nextcloud/nextcloudplugin_config.qml
 %cmake_kde5
 
 %build
